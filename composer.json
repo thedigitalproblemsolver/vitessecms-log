@@ -1,7 +1,7 @@
 {
-  "name": "vitessecms/language",
+  "name": "vitessecms/log",
   "type": "library",
-  "description": "Language module for VitesseCms",
+  "description": "Log module for VitesseCms",
   "keywords": ["php","phalcon","vitessecms"],
   "homepage": "https://github.com/thedigitalproblemsolver/VitesseCMS",
   "license": "GPL-2.0-or-later",
@@ -14,11 +14,9 @@
   ],
   "autoload": {
     "psr-4": {
-      "VitesseCms\\Language\\": "src/"
+      "VitesseCms\\Log\\": "src/"
     }
   },
   "require": {
-    "vitessecms/core": "~0.0.5",
-    "vitessecms/form": "~0.0.7"
   }
 }
