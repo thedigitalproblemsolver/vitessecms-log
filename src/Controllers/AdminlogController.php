@@ -17,6 +17,7 @@ class AdminlogController extends AbstractAdminController
         $this->listOrder = 'createdAt';
         $this->listOrderDirection = -1;
         $this->class = Log::class;
+        $this->displayEditButton = false;
     }
 
     public function editAction(
