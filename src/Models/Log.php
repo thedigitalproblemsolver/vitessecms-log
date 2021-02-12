@@ -104,6 +104,21 @@ class Log extends AbstractCollection
         return $this;
     }
 
+    public function getClass(): ?string
+    {
+        return $this->class;
+    }
+
+    public function getUserId(): ?ObjectId
+    {
+        return $this->userId;
+    }
+
+    public function getItemId(): ?ObjectId
+    {
+        return $this->itemId;
+    }
+
     public function afterFetch()
     {
         $name = [$this->getCreateDate()->format('Y-m-d H:i:s')];

@@ -6,8 +6,9 @@ use VitesseCms\Admin\AbstractAdminController;
 use VitesseCms\Database\AbstractCollection;
 use VitesseCms\Log\Models\Log;
 use VitesseCms\Form\AbstractForm;
+use VitesseCms\Log\Repositories\AdminRepositoriesInterface;
 
-class AdminlogController extends AbstractAdminController
+class AdminlogController extends AbstractAdminController implements AdminRepositoriesInterface
 {
 
     public function onConstruct()
