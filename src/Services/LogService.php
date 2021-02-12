@@ -11,7 +11,7 @@ class LogService extends AbstractInjectable
     public function write(ObjectId $itemId, string $class, string $message, bool $published = true): bool {
         return (new Log())
             ->setItemId($itemId)
-            ->setClass('class', $class)
+            ->setClass( $class)
             ->setMessage($message)
             ->setUserId($this->user->getId())
             ->setPublished($published)
