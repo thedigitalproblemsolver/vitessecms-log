@@ -24,13 +24,13 @@ class AdminlogController extends AbstractAdminController implements AdminReposit
     public function editAction(
         string $itemId = null,
         string $template = 'editForm',
-        string $templatePath = 'core/src/resources/views/admin/',
+        string $templatePath = 'core/src/Resources/views/admin/',
         AbstractForm $form = null
     ): void {
         parent::editAction(
             $itemId,
             'adminLogEdit',
-           'log/src/Resources/Views/Admin/'
+           'log/src/Resources/views/admin/'
         );
     }
 
