@@ -2,9 +2,9 @@
 
 namespace VitesseCms\Job\Factories;
 
-use VitesseCms\Log\Models\Log;
 use MongoDB\BSON\ObjectId;
 use Phalcon\Di;
+use VitesseCms\Log\Models\Log;
 
 class LogFactory
 {

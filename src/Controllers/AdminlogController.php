@@ -4,8 +4,8 @@ namespace VitesseCms\Log\Controllers;
 
 use VitesseCms\Admin\AbstractAdminController;
 use VitesseCms\Database\AbstractCollection;
-use VitesseCms\Log\Models\Log;
 use VitesseCms\Form\AbstractForm;
+use VitesseCms\Log\Models\Log;
 use VitesseCms\Log\Repositories\AdminRepositoriesInterface;
 
 class AdminlogController extends AbstractAdminController implements AdminRepositoriesInterface

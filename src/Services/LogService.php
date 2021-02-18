@@ -2,9 +2,9 @@
 
 namespace VitesseCms\Log\Services;
 
+use MongoDB\BSON\ObjectId;
 use VitesseCms\Core\AbstractInjectable;
 use VitesseCms\Log\Models\Log;
-use MongoDB\BSON\ObjectId;
 
 class LogService extends AbstractInjectable
 {
