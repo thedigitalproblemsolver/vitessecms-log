@@ -13,7 +13,7 @@ class AdminMenuListener
         if ($adminMenu->getUser()->getPermissionRole() === 'superadmin') :
             $children = new AdminMenuNavBarChildren();
             $children->addChild('Activity log', 'admin/log/adminlog/adminList');
-            $adminMenu->addDropdown('System',$children);
+            $adminMenu->addDropdown('System', $children);
         endif;
     }
 }

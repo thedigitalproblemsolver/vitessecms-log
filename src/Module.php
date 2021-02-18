@@ -14,7 +14,7 @@ class Module extends AbstractModule
     {
         parent::registerServices($di, 'Log');
 
-        if(AdminUtil::isAdminPage()):
+        if (AdminUtil::isAdminPage()):
             $di->setShared('repositories', new AdminRepositoryCollection(
                 new UserRepository()
             ));

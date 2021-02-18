@@ -48,30 +48,9 @@ class Log extends AbstractCollection
      */
     public $post;
 
-    public function setItemId(ObjectId $itemId): self
-    {
-        $this->itemId = $itemId;
-
-        return $this;
-    }
-
-    public function setClass(string $class): self
-    {
-        $this->class = $class;
-
-        return $this;
-    }
-
     public function setMessage(string $message): self
     {
         $this->message = $message;
-
-        return $this;
-    }
-
-    public function setUserId(ObjectId $userId): self
-    {
-        $this->userId = $userId;
 
         return $this;
     }
@@ -109,14 +88,35 @@ class Log extends AbstractCollection
         return $this->class;
     }
 
+    public function setClass(string $class): self
+    {
+        $this->class = $class;
+
+        return $this;
+    }
+
     public function getUserId(): ?ObjectId
     {
         return $this->userId;
     }
 
+    public function setUserId(ObjectId $userId): self
+    {
+        $this->userId = $userId;
+
+        return $this;
+    }
+
     public function getItemId(): ?ObjectId
     {
         return $this->itemId;
+    }
+
+    public function setItemId(ObjectId $itemId): self
+    {
+        $this->itemId = $itemId;
+
+        return $this;
     }
 
     public function afterFetch()

@@ -26,16 +26,17 @@ class AdminlogController extends AbstractAdminController implements AdminReposit
         string $template = 'editForm',
         string $templatePath = 'core/src/Resources/views/admin/',
         AbstractForm $form = null
-    ): void {
+    ): void
+    {
         parent::editAction(
             $itemId,
             'adminLogEdit',
-           'log/src/Resources/views/admin/'
+            'log/src/Resources/views/admin/'
         );
     }
 
-    protected function getAdminlistName(AbstractCollection $item) : string
+    protected function getAdminlistName(AbstractCollection $item): string
     {
-        return $item->getCreateDate()->format('Y-m-d').' - '.$item->_('message');
+        return $item->getCreateDate()->format('Y-m-d') . ' - ' . $item->_('message');
     }
 }

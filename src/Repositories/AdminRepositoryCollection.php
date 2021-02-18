@@ -14,7 +14,8 @@ class AdminRepositoryCollection implements AdminRepositoriesInterface, BaseRepos
 
     public function __construct(
         UserRepository $userRepository
-    ) {
+    )
+    {
         $this->user = $userRepository;
     }
 }

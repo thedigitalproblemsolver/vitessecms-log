@@ -8,10 +8,11 @@ use VitesseCms\Log\Models\Log;
 
 class LogService extends AbstractInjectable
 {
-    public function write(ObjectId $itemId, string $class, string $message, bool $published = true): bool {
+    public function write(ObjectId $itemId, string $class, string $message, bool $published = true): bool
+    {
         return (new Log())
             ->setItemId($itemId)
-            ->setClass( $class)
+            ->setClass($class)
             ->setMessage($message)
             ->setUserId($this->user->getId())
             ->setPublished($published)

@@ -16,7 +16,8 @@ class LogFactory
         string $class,
         string $message,
         bool $published = true
-    ): Log {
+    ): Log
+    {
         return (new Log())
             ->set('itemId', $itemId)
             ->set('class', $class)

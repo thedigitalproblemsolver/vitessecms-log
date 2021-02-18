@@ -20,8 +20,7 @@ class AdminlogControllerListener
             ->addText('userId', 'filter[userId]')
             ->addText('ipAddress', 'filter[ipAddress]')
             ->addText('property', 'filter[property]')
-            ->addText('sourceUri', 'filter[sourceUri]')
-        ;
+            ->addText('sourceUri', 'filter[sourceUri]');
 
         return $form->renderForm(
             $controller->getLink() . '/' . $controller->router->getActionName(),
@@ -29,14 +28,14 @@ class AdminlogControllerListener
         );
     }
 
-    public function beforeEdit(Event $event, AdminlogController $controller, Log $log ): void
+    public function beforeEdit(Event $event, AdminlogController $controller, Log $log): void
     {
         $class = $log->getClass();
-        if(class_exists($class)):
-            $controller->addRenderParam('item', $class::findById((string) $log->getItemId()));
+        if (class_exists($class)):
+            $controller->addRenderParam('item', $class::findById((string)$log->getItemId()));
         endif;
 
-        if($log->getUserId() !== null) :
+        if ($log->getUserId() !== null) :
             $controller->addRenderParam(
                 'user',
                 $controller->repositories->user->getById((string)$log->getUserId())
