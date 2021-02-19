@@ -2,9 +2,9 @@
 
 namespace VitesseCms\Job\Factories;
 
-use VitesseCms\Log\Models\Log;
 use MongoDB\BSON\ObjectId;
 use Phalcon\Di;
+use VitesseCms\Log\Models\Log;
 
 class LogFactory
 {
@@ -16,7 +16,8 @@ class LogFactory
         string $class,
         string $message,
         bool $published = true
-    ): Log {
+    ): Log
+    {
         return (new Log())
             ->set('itemId', $itemId)
             ->set('class', $class)

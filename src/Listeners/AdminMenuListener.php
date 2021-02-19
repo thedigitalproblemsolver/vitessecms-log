@@ -2,9 +2,9 @@
 
 namespace VitesseCms\Log\Listeners;
 
+use Phalcon\Events\Event;
 use VitesseCms\Admin\Models\AdminMenu;
 use VitesseCms\Admin\Models\AdminMenuNavBarChildren;
-use Phalcon\Events\Event;
 
 class AdminMenuListener
 {
@@ -13,7 +13,7 @@ class AdminMenuListener
         if ($adminMenu->getUser()->getPermissionRole() === 'superadmin') :
             $children = new AdminMenuNavBarChildren();
             $children->addChild('Activity log', 'admin/log/adminlog/adminList');
-            $adminMenu->addDropdown('System',$children);
+            $adminMenu->addDropdown('System', $children);
         endif;
     }
 }

@@ -2,16 +2,17 @@
 
 namespace VitesseCms\Log\Services;
 
+use MongoDB\BSON\ObjectId;
 use VitesseCms\Core\AbstractInjectable;
 use VitesseCms\Log\Models\Log;
-use MongoDB\BSON\ObjectId;
 
 class LogService extends AbstractInjectable
 {
-    public function write(ObjectId $itemId, string $class, string $message, bool $published = true): bool {
+    public function write(ObjectId $itemId, string $class, string $message, bool $published = true): bool
+    {
         return (new Log())
             ->setItemId($itemId)
-            ->setClass('class', $class)
+            ->setClass($class)
             ->setMessage($message)
             ->setUserId($this->user->getId())
             ->setPublished($published)
