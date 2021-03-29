@@ -10,11 +10,16 @@ class LogService extends AbstractInjectable
 {
     public function write(ObjectId $itemId, string $class, string $message, bool $published = true): bool
     {
+        $userId = null;
+        if($this->user !== null) :
+            $userId = $this->user->getId();
+        endif;
+
         return (new Log())
             ->setItemId($itemId)
             ->setClass($class)
             ->setMessage($message)
-            ->setUserId($this->user->getId())
+            ->setUserId($userId)
             ->setPublished($published)
             ->setIpAddress($_SERVER['REMOTE_ADDR'])
             ->setProperty($_SERVER['HTTP_HOST'])

@@ -100,7 +100,7 @@ class Log extends AbstractCollection
         return $this->userId;
     }
 
-    public function setUserId(ObjectId $userId): self
+    public function setUserId(?ObjectId $userId): self
     {
         $this->userId = $userId;
 
