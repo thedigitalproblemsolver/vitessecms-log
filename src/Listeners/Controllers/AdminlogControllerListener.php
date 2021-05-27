@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace VitesseCms\Log\Listeners;
+namespace VitesseCms\Log\Listeners\Controllers;
 
 use Phalcon\Events\Event;
 use VitesseCms\Admin\AbstractAdminController;
@@ -10,11 +10,7 @@ use VitesseCms\Log\Models\Log;
 
 class AdminlogControllerListener
 {
-    public function adminListFilter(
-        Event $event,
-        AbstractAdminController $controller,
-        AdminlistFormInterface $form
-    ): string
+    public function adminListFilter(Event $event, AbstractAdminController $controller, AdminlistFormInterface $form): string
     {
         $form->addText('itemId', 'filter[itemId]')
             ->addText('userId', 'filter[userId]')
