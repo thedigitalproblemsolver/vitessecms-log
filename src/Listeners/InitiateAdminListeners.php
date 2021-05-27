@@ -2,14 +2,17 @@
 
 namespace VitesseCms\Log\Listeners;
 
-use Phalcon\Events\Manager;
+use VitesseCms\Core\Interfaces\InitiateListenersInterface;
+use VitesseCms\Core\Interfaces\InjectableInterface;
 use VitesseCms\Log\Controllers\AdminlogController;
+use VitesseCms\Log\Listeners\Admin\AdminMenuListener;
+use VitesseCms\Log\Listeners\Controllers\AdminlogControllerListener;
 
-class InitiateAdminListeners
+class InitiateAdminListeners implements InitiateListenersInterface
 {
-    public static function setListeners(Manager $eventsManager): void
+    public static function setListeners(InjectableInterface $di): void
     {
-        $eventsManager->attach('adminMenu', new AdminMenuListener());
-        $eventsManager->attach(AdminlogController::class, new AdminlogControllerListener());
+        $di->eventsManager->attach('adminMenu', new AdminMenuListener());
+        $di->eventsManager->attach(AdminlogController::class, new AdminlogControllerListener());
     }
 }
