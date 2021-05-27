@@ -21,6 +21,6 @@
     "vitessecms/admin": "~0.2.4",
     "vitessecms/form": "~0.2.5",
     "vitessecms/database": "~0.2.2",
-    "vitessecms/user": "~0.2.2"
+    "vitessecms/user": "~0.2.3"
   }
 }
