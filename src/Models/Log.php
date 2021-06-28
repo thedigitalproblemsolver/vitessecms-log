@@ -83,6 +83,11 @@ class Log extends AbstractCollection
         return $this;
     }
 
+    public function hasClass(): bool
+    {
+        return $this->class !== null;
+    }
+
     public function getClass(): ?string
     {
         return $this->class;
