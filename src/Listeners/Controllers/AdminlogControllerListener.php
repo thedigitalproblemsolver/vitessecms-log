@@ -26,9 +26,11 @@ class AdminlogControllerListener
 
     public function beforeEdit(Event $event, AdminlogController $controller, Log $log): void
     {
-        $class = $log->getClass();
-        if (class_exists($class)):
-            $controller->addRenderParam('item', $class::findById((string)$log->getItemId()));
+        if($log->hasClass()):
+            $class = $log->getClass();
+            if (class_exists($class)):
+                $controller->addRenderParam('item', $class::findById((string)$log->getItemId()));
+            endif;
         endif;
 
         if ($log->getUserId() !== null) :
