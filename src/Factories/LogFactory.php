@@ -3,7 +3,7 @@
 namespace VitesseCms\Job\Factories;
 
 use MongoDB\BSON\ObjectId;
-use Phalcon\Di;
+use Phalcon\Di\Di;
 use VitesseCms\Log\Models\Log;
 
 class LogFactory

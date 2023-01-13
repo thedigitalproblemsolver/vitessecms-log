@@ -2,7 +2,7 @@
 
 namespace VitesseCms\Log;
 
-use Phalcon\DiInterface;
+use Phalcon\Di\DiInterface;
 use VitesseCms\Admin\Utils\AdminUtil;
 use VitesseCms\Core\AbstractModule;
 use VitesseCms\Log\Repositories\AdminRepositoryCollection;
