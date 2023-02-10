@@ -16,7 +16,7 @@ class InitiateAdminListeners implements InitiateListenersInterface
     public static function setListeners(InjectableInterface $di): void
     {
         $di->eventsManager->attach('adminMenu', new AdminMenuListener());
-        $di->eventsManager->attach(LogEnum::ATTACH_SERVICE_LISTENER, new ServiceListener());
+        $di->eventsManager->attach('logService', new ServiceListener($di->log));
         $di->eventsManager->attach(AdminlogController::class, new AdminlogControllerListener());
     }
 }
