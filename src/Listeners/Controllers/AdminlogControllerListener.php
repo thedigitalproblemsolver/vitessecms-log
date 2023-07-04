@@ -10,18 +10,14 @@ use VitesseCms\Log\Models\Log;
 
 class AdminlogControllerListener
 {
-    public function adminListFilter(Event $event, AbstractAdminController $controller, AdminlistFormInterface $form): string
+    public function adminListFilter(Event $event, AdminlogController $controller, AdminlistFormInterface $form): void
     {
         $form->addText('itemId', 'filter[itemId]')
             ->addText('userId', 'filter[userId]')
             ->addText('ipAddress', 'filter[ipAddress]')
             ->addText('property', 'filter[property]')
-            ->addText('sourceUri', 'filter[sourceUri]');
-
-        return $form->renderForm(
-            $controller->getLink() . '/' . $controller->router->getActionName(),
-            'adminFilter'
-        );
+            ->addText('sourceUri', 'filter[sourceUri]')
+        ;
     }
 
     public function beforeEdit(Event $event, AdminlogController $controller, Log $log): void

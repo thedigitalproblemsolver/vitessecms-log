@@ -7,11 +7,8 @@ use VitesseCms\Log\Services\LogService;
 
 class ServiceListener
 {
-    private LogService $logService;
-
-    public function __construct(LogService $logService)
+    public function __construct(private readonly LogService $logService)
     {
-        $this->logService = $logService;
     }
 
     public function attach( Event $event): LogService
