@@ -4,6 +4,6 @@ namespace VitesseCms\Log\Enums;
 
 enum LogEnum: string
 {
-    case LISTENER = 'logListener';
-    case GET_REPOSITORY = 'logListener:getRepository';
+    case LISTENER = 'LogListener';
+    case GET_REPOSITORY = 'LogListener:getRepository';
 }
