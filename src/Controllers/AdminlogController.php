@@ -49,32 +49,4 @@ class AdminlogController extends AbstractControllerAdmin implements
     public function getModel(string $id): ?AbstractCollection{
         return $this->logRepository->getById($id, false);
     }
-    /*public function onConstruct()
-    {
-        parent::onConstruct();
-
-        $this->listOrder = 'createdAt';
-        $this->listOrderDirection = -1;
-        $this->class = Log::class;
-        $this->displayEditButton = false;
-    }
-
-    public function editAction(
-        string $itemId = null,
-        string $template = 'editForm',
-        string $templatePath = 'core/src/Resources/views/admin/',
-        AbstractForm $form = null
-    ): void
-    {
-        parent::editAction(
-            $itemId,
-            'adminLogEdit',
-            'log/src/Resources/views/admin/'
-        );
-    }
-
-    protected function getAdminlistName(AbstractCollection $item): string
-    {
-        return $item->getCreateDate()->format('Y-m-d') . ' - ' . $item->_('message');
-    }*/
 }
