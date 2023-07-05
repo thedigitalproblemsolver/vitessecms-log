@@ -2,9 +2,8 @@
 
 namespace VitesseCms\Log\Enums;
 
-use VitesseCms\Core\AbstractEnum;
-
-class LogEnum extends AbstractEnum
+enum LogEnum: string
 {
-    public const ATTACH_SERVICE_LISTENER = 'logService:attach';
+    case LISTENER = 'LogListener';
+    case GET_REPOSITORY = 'LogListener:getRepository';
 }
