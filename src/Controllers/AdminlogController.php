@@ -6,8 +6,6 @@ use VitesseCms\Admin\Interfaces\AdminModelListInterface;
 use VitesseCms\Admin\Interfaces\AdminModelReadOnlyInterface;
 use VitesseCms\Admin\Traits\TraitAdminModelList;
 use VitesseCms\Admin\Traits\TraitAdminModelReadOnly;
-use VitesseCms\Content\Enum\ItemEnum;
-use VitesseCms\Content\Repositories\ItemRepository;
 use VitesseCms\Core\AbstractControllerAdmin;
 use VitesseCms\Database\AbstractCollection;
 use VitesseCms\Database\Models\FindOrder;
@@ -41,7 +39,7 @@ class AdminlogController extends AbstractControllerAdmin implements
         return $this->logRepository->findAll(
             $findValueIterator,
             false,
-            99999,
+            9999,
             new FindOrderIterator([new FindOrder('createdAt', -1)])
         );
     }
