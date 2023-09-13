@@ -1,7 +1,10 @@
-<?php declare(strict_types=1);
+<?php
+declare(strict_types=1);
 
 namespace VitesseCms\Log\Controllers;
 
+use ArrayIterator;
+use stdClass;
 use VitesseCms\Admin\Interfaces\AdminModelListInterface;
 use VitesseCms\Admin\Interfaces\AdminModelReadOnlyInterface;
 use VitesseCms\Admin\Traits\TraitAdminModelList;
@@ -30,11 +33,11 @@ class AdminlogController extends AbstractControllerAdmin implements
     {
         parent::OnConstruct();
 
-        $this->logRepository = $this->eventsManager->fire(LogEnum::GET_REPOSITORY->value, new \stdClass());
-        $this->userRepository = $this->eventsManager->fire(UserEnum::GET_REPOSITORY->value, new \stdClass());
+        $this->logRepository = $this->eventsManager->fire(LogEnum::GET_REPOSITORY->value, new stdClass());
+        $this->userRepository = $this->eventsManager->fire(UserEnum::GET_REPOSITORY->value, new stdClass());
     }
 
-    public function getModelList( ?FindValueIterator $findValueIterator): \ArrayIterator
+    public function getModelList(?FindValueIterator $findValueIterator): ArrayIterator
     {
         return $this->logRepository->findAll(
             $findValueIterator,
@@ -44,7 +47,8 @@ class AdminlogController extends AbstractControllerAdmin implements
         );
     }
 
-    public function getModel(string $id): ?AbstractCollection{
+    public function getModel(string $id): ?AbstractCollection
+    {
         return $this->logRepository->getById($id, false);
     }
 }

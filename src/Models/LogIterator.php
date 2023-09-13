@@ -1,8 +1,11 @@
-<?php declare(strict_types=1);
+<?php
+declare(strict_types=1);
 
 namespace VitesseCms\Log\Models;
 
-class LogIterator extends \ArrayIterator
+use ArrayIterator;
+
+class LogIterator extends ArrayIterator
 {
     public function __construct(array $logs)
     {
