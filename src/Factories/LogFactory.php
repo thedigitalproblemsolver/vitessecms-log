@@ -1,6 +1,8 @@
-<?php declare(strict_types=1);
+<?php
 
-namespace VitesseCms\Job\Factories;
+declare(strict_types=1);
+
+namespace VitesseCms\Log\Factories;
 
 use MongoDB\BSON\ObjectId;
 use Phalcon\Di\Di;
@@ -16,17 +18,17 @@ class LogFactory
         string $class,
         string $message,
         bool $published = true
-    ): Log
-    {
+    ): Log {
         return (new Log())
             ->set('itemId', $itemId)
             ->set('class', $class)
             ->set('message', $message)
             ->set('userId', Di::getDefault()->get('user')->getId())
             ->set('published', $published)
-            ->set('ipAddress', $_SERVER['REMOTE_ADDR'])
-            ->set('property', $_SERVER['HTTP_HOST'])
-            ->set('sourceUri', $_SERVER['REQUEST_URI'])
-            ->set('post', serialize(Di::getDefault()->get('request')->getPost()));
+            //->set('ipAddress', $_SERVER['REMOTE_ADDR'])
+            //->set('property', $_SERVER['HTTP_HOST'])
+            //->set('sourceUri', $_SERVER['REQUEST_URI'])
+            //->set('post', serialize(Di::getDefault()->get('request')->getPost()))
+            ;
     }
 }
